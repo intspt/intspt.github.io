@@ -1,7 +1,6 @@
 ---
 layout: base
-title: title
-test: test
+title: 我就不理胖子
 ---
 
 just for test
