@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+{{ paginator.total_pages  }}
+{% for post in paginator.posts %}
+<h1 style="cursor:pointer;" onclick="jumpWithURL('{{ post.url }}');">{{ post.title }}</h1>
+{% assign content = post.content | newline_to_br | split: '<br />' %}
+{% if content.size > 10 %}
+<div markdown="1">
+{{ content | slice: 0, 10 }}
+</div>
+[(更多...)]({{ post.url }})
+{% else %}
+{{ post.content | split: '\n' | join: 'hahahahahahaha'}}
+{% endif %}
+* * *
+{% endfor %}

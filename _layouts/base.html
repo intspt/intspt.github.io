@@ -2,18 +2,28 @@
 <html lang="zh-cmn-Hans">
   <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">{{ page.test }}</h1>
+      <h1 class="project-name" style="cursor:pointer;" onclick="jumpWithURL('/');">{{ site.title }}</h1>
+      <h2 class="project-tagline" style="cursor:pointer;" onclick="jumpWithURL('http://107.170.237.213:8080/');">学姐</h2>
     </section>
     <section class="main-content">
+      {% if page.title %}
+      <h1>{{ page.title }}</h1>
+      <hr>
+      {% endif %}
       {{ content }}
       <footer class="site-footer">
-        <span class="site-footer-credits">owned by intspt</span>
+        <center><span class="site-footer-credits">owned by intspt</span></center>
       </footer>
     </section>
+    <script type="text/javascript">
+      function jumpWithURL (URL) {
+        window.location.href = URL;
+      }
+    </script>
   </body>
 </html>
