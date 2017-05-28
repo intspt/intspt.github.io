@@ -1,6 +1,7 @@
 ---
 layout: base
 permalink: /note/2015-02-05-00
+title: 终于搞定MySQL server has gone away错误了
 ---
 
 原来是MySQL连接超时的问题

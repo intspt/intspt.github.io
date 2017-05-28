@@ -2,19 +2,35 @@
 layout: base
 ---
 
-{{ paginator.total_pages  }}
 {% for post in paginator.posts %}
 <h1 style="cursor:pointer;" onclick="jumpWithURL('{{ post.url }}');">{{ post.title }}</h1>
 {% assign content = post.content | newline_to_br | split: '<br />' %}
 {% if content.size > 10 %}
 <div markdown="1">
 {{ content | slice: 0, 10 }}
-[(更多...)]({{ post.url }})
 </div>
+<a href="{{ post.url }}">(更多...)</a>
 {% else %}
 <div markdown="1">
-{{ post.content | split: '\n' | join: 'hahahahahahaha'}}
+{{ post.content }}
 </div>
 {% endif %}
-* * *
+<hr>
 {% endfor %}
+<center>
+{% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"上一页</a>
+{% endif %}
+{% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <span class="active">{{ page }}</span>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+{% endfor %}
+{% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
+{% endif %}
+</center>
