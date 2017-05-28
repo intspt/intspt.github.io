@@ -9,10 +9,12 @@ layout: base
 {% if content.size > 10 %}
 <div markdown="1">
 {{ content | slice: 0, 10 }}
-</div>
 [(更多...)]({{ post.url }})
+</div>
 {% else %}
+<div markdown="1">
 {{ post.content | split: '\n' | join: 'hahahahahahaha'}}
+</div>
 {% endif %}
 * * *
 {% endfor %}
