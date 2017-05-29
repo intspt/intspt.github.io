@@ -8,6 +8,7 @@ layout: base
 {% if content.size > 10 %}
 <div markdown="1">
 {{ content | slice: 0, 10 }}
+</code>
 </div>
 <a href="{{ post.url }}">(更多...)</a>
 {% else %}
@@ -18,19 +19,23 @@ layout: base
 <hr>
 {% endfor %}
 <center>
-{% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"上一页</a>
-{% endif %}
-{% for page in (1..paginator.total_pages) %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="/page{{ paginator.previous_page }}" class="previous">上一页</a>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-      <span class="active">{{ page }}</span>
+      <span class="active">{{ page }}</em>
     {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      <a href="/">1</a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <a href="/page{{ page }}">{{ page }}</a>
     {% endif %}
-{% endfor %}
-{% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
-{% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}" class="next">下一页</a>
+  {% endif %}
+</div>
 </center>

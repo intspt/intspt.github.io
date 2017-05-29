@@ -1,7 +1,7 @@
 ---
 layout: base
 permalink: /note/2015-06-19-00
-title: \[CheckiO\]Solution
+title: 【CheckiO】Solution
 ---
 
 挺有意思的

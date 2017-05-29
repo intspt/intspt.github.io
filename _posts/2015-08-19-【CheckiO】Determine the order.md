@@ -1,7 +1,7 @@
 ---
 layout: base
 permalink: /note/2015-08-19-00
-title: \[CheckiO\]Determine the order
+title: 【CheckiO】Determine the order
 ---
 
 这题显然是个拓扑排序
