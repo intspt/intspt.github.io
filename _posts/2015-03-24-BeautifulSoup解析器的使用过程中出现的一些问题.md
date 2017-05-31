@@ -20,7 +20,7 @@ title: BeautifulSoup解析器的使用过程中出现的一些问题
 
 后来google到一个相似的问题
 
-[http://stackoverflow.com/questions/16029442/beautifulsoup-lxml-are-there-problems-with-large-elements](http://stackoverflow.com/questions/16029442/beautifulsoup-lxml-are-there-problems-with-large-elements)
+[BeautifulSoup / lxml: Are there problems with large elements?](http://stackoverflow.com/questions/16029442/beautifulsoup-lxml-are-there-problems-with-large-elements)
 
 根据回答里的建议把lxml改成了html.parser就好了
 
@@ -40,5 +40,6 @@ title: BeautifulSoup解析器的使用过程中出现的一些问题
 
 后来发现文档里有这么一句
 
-首先,文档被转换成Unicode,并且HTML的实例都被转换成Unicode编码
+> 首先,文档被转换成Unicode,并且HTML的实例都被转换成Unicode编码
+
 因此对于utf-8格式的网页不需要解码编码直接传入即可
