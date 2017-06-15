@@ -1,6 +1,6 @@
 ---
 layout: base
-permalink: /note/2017-06-16-00
+permalink: /note/2017-06-14-00
 title: NSURLSessionConfiguration与NSURLRequest中相同属性的优先级问题
 ---
 
