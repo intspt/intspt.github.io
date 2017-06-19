@@ -42,12 +42,12 @@ title: LLDB中的expression命令
 
 # 结论
 
-> expression是一个执行并输出返回结果的命令，并且输出可以定制
->
-> print基于expression，不接受定制输出的参数
->
-> po基于expression，不接受定制输出的参数
->
-> print一般用于输出基础的数据类型
->
-> po一般用于输出对象【优先调用debugDescription，其次调用description
+* expression是一个执行并输出返回结果的命令，并且输出可以定制
+
+* print基于expression，不接受定制输出的参数
+
+* po基于expression，不接受定制输出的参数
+
+* print一般用于输出基础的数据类型
+
+* po一般用于输出对象【优先调用debugDescription，其次调用description
