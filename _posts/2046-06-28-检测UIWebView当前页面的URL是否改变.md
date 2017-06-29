@@ -28,6 +28,6 @@ title: 检测UIWebView当前页面的URL是否改变
 
 于是我监听了这个属性
 
-并且在变化时检测当前页面的url(window.location.href)是否是首页
+并且在变化时检测UIWebView是否可以返回(canGoBack)
 
 就可以了【虽然实现的不美观。。。不过没辙了
