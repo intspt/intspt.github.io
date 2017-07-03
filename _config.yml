@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-title: 我就不理胖子
+title: September
 paginate: 5
 paginate_path: "page:num"
 gems: [jekyll-paginate]
