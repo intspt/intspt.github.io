@@ -1,7 +1,7 @@
 ---
 layout: base
 permalink: /note/2017-12-13-00
-title: dismissViewControllerAnimated的一个坑
+title: UIViewController中dismissViewControllerAnimated:animated:的一个坑
 ---
 
 最近发现在UITableView的tableView:didSelectRowAtIndexPath:代理方法内调用UIViewController的dismissViewControllerAnimated:animated:有时候会延迟执行
