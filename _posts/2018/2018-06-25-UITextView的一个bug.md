@@ -1,0 +1,21 @@
+---
+layout: base
+permalink: /note/2017-06-25-00
+title: UITextView的一个bug
+---
+
+最近在重构公司APP用的debugView
+
+发现UITextView的editable属性设置为NO时
+
+使用scrollRangeToVisible方法会改变textContainer的区域
+
+![](/img/UITextView的一个bug_0.jpg)
+
+![](/img/UITextView的一个bug_1.jpg)
+
+解决办法是将UITextView的layoutManager属性的allowsNonContiguousLayout设置为NO
+
+即
+
+    textView.layoutManager.allowsNonContiguousLayout = NO;

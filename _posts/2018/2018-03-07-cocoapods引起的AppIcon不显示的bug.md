@@ -1,6 +1,6 @@
 ---
 layout: base
-permalink: /note/2017-03-07-00
+permalink: /note/2018-03-07-00
 title: cocoapods引起的AppIcon不显示的bug
 ---
 
