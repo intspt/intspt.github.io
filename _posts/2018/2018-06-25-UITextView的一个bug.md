@@ -1,6 +1,6 @@
 ---
 layout: base
-permalink: /note/2017-06-25-00
+permalink: /note/2018-06-25-00
 title: UITextView的一个bug
 ---
 
