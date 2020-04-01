@@ -1,0 +1,40 @@
+---
+layout: base
+permalink: /note/2020-04-01-01
+title: 【Flutter】FlutterBoost相关的一个小问题
+---
+
+FlutterBoost是单引擎
+
+每次push新的Flutter页面都是用一个新的native的controller去承载它
+
+这个Flutter页面的生命周期会跟native的controller的生命周期关联起来
+
+从本质上说native的controller只是一个“显示器”
+
+这个“显示器”里播放什么画面取决于Flutter引擎这个”主机“
+
+那么这个”主机“什么时候切画面呢
+
+iOS侧是在viewWillAppear与viewDidAppear的时候做切换
+
+viewWillDisappear与viewDidDisappear则没有任何操作
+
+如果有什么因素导致下个FlutterController的Appear方法已经执行但是当前FlutterController还没有Disappear
+
+那就会导致当前FlutterController展示的内容切换成下个FlutterController要展示的内容
+
+然后push到下个页面
+
+返回的时候也会看到回到上个页面之后看到的还是当前页面的内容
+
+然后闪一下变回上个页面的内容
+
+最近发现了一个这种情况的实例
+
+那就是FlutterControllerA present了一个其他页面X
+
+然后在这个页面X关闭的回调里push了另一个FlutterControllerB
+
+如果这个关闭的回调没有放在dismiss方法的completion里就会出现上面所说的问题
+
