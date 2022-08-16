@@ -4,7 +4,7 @@ permalink: /note/2022-08-12
 title: 【Flutter】mixin学习笔记
 ---
 
-# 定义
+#### 定义
 
 懒得写了，直接看[官方文档](https://dart.cn/guides/language/language-tour#adding-features-to-a-class-mixins)
 
